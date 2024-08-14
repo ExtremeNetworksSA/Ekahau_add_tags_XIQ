@@ -163,16 +163,17 @@ if 'accessPoints.json' in dir_list:
         print("script is exiting....\n")
 print(f"{colorGreen}Completed")
 print(f"{colorWhite}")
-pp(ap_data['accessPoints'])
+#pp(ap_data['accessPoints'])
 updated_aps = []
 for ap in ap_data['accessPoints']:
     if csv_df[csv_columns[0]].eq(ap['name']).any():
         filt = csv_df[csv_columns[0]] == ap['name']
         serial_number = csv_df.loc[filt,csv_columns[1]].values[0]
         new_name = csv_df.loc[filt,csv_columns[2]].values[0]
-        ap_tags = list(map(itemgetter(serial_tag), ap['tags']))
+        ap_tags = [tag for tag in ap['tags'] if tag.get("tagKeyId") == serial_tag] # search tags for matching tagKeyId
         if ap_tags:
-            print(f"{colorOrange} Serial number tag found for ap {ap['name']} - value is {ap_tags}")
+            print(f"{colorOrange} Serial number tag found for ap {ap['name']} - value is {ap_tags[0]['value']}") # print info, but make no changes to the AP.
+            print("No changes will be made to this AP.")
         else:
             new_tag = {"tagKeyId" : f"{serial_tag}",
                     "value" : f"{serial_number.strip()}"}

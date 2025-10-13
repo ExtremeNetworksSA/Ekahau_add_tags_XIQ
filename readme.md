@@ -1,5 +1,10 @@
 # EKahau Add Serial Number Tag
 ### Ekahau_add_tags_XIQ.py
+
+_The software is provided as-is and [Extreme Networks](http://www.extremenetworks.com/) has no obligation to provide maintenance, support, updates, enhancements, or modifications. Any support provided by [Extreme Networks](http://www.extremenetworks.com/) is at its sole discretion._
+
+_Issues and/or bug fixes may be reported on in the Issues for this repository._
+
 ## Purpose
 The script will prompt the user for a CSV file and an Ekahau file. This script will read a CSV file that includes the names of the APs in an Ekahau file, the serial numbers of those APs, and an optional name to update the APs. The script will then open up the Ekahau file, find the APs based on the name added in the CSV. The script will then add a serialNumber tag to the AP and add the serial number value from the CSV. If the CSV has a name to update the AP to the script will change the AP name. Once the script has completed all APs, the script will save a new Ekahau file using the same name and appending _EXTREME to it. 
 With this updated file you can easily import the Ekahau file in XIQ's real time maps and have the APs onoboarded or moved to the new floorplan.

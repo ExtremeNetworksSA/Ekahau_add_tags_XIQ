@@ -10,8 +10,9 @@ from pprint import pprint as pp
 from operator import itemgetter
 import time
 import inspect
-#current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-#parent_dir = os.path.dirname(current_dir)
+
+
+VERSION = "v1.1"
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -24,7 +25,10 @@ colorOrange = fg(94) ##ORANGE
 colorGrey = fg(8)  ##GREY
 
 # CSV columns to be used by script
-csv_columns = ['AP Name', 'serial number', 'new AP Name']
+## Column 0 - AP Name in Ekahau File
+## Column 1 - Serial Number of AP
+## Column 3 - New AP Name - If names are not changing either do an empty column or same as AP name column
+csv_columns = ['AP Name', 'Serial Number', 'New AP Name']
 
 def checkTags(tag_data):
     serial_tag_id = 0

@@ -13,7 +13,7 @@ With this updated file you can easily import the Ekahau file in XIQ's real time 
 ##### CSV file
 The script will prompt for a csv file. The script will look for 3 columns in the CSV, any other columns will be ignored. 
 The first column it looks for is 'AP Name'. This column should include the name of the AP as it appears in the Ekahau file.
-The second column it looks for is 'serial number'. This column should include the XIQ serial numbers for the APs.
+The second column it looks for is 'Serial Number'. This column should include the XIQ serial numbers for the APs.
 the third column it looks for is 'New AP Name'. This column needs to be in the CSV but does not need to be filled out if the AP names are not changing. If you do need to update the names, names in this column will be added to the Ekahau file in replacement to the 'AP Name' on the same row of the CSV.
 ###### <span style="color:purple"> Ekahau_tag.csv is included as an example.</span>
 ##### Ekahau file

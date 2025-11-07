@@ -1,3 +1,4 @@
+import zipfile
 from zipfile import ZipFile
 import os
 import sys
@@ -63,7 +64,7 @@ def importCSV(csv_file):
 
 def zip_folder(folder_path, output_filename):
     # Create a zip file
-    with ZipFile(output_filename, 'w') as zipf:
+    with ZipFile(output_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
         # Loop through the files in the folder
         for foldername, subfolders, filenames in os.walk(folder_path):
             for filename in filenames:
